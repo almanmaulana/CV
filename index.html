@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CV Online | Nama Kamu</title>
+<title>CV Online Alman Maulana </title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Material+Symbols+Outlined" rel="stylesheet">
 
@@ -67,6 +67,19 @@ body {
     font-size: 28px;
 }
 
+/* Style untuk link yang sedang aktif */
+.nav-links a.active {
+    color: var(--accent);
+    font-weight: 600;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 5px;
+}
+
+/* Pastikan transisinya halus */
+.nav-links a {
+    transition: all 0.3s ease;
+}
+
 /* HERO */
 .hero {
     position: relative;
@@ -103,8 +116,9 @@ body {
     border-radius: 50%;
     object-fit: cover;
     border: 4px solid var(--border-color);
+    object-position: 50% 100% ;
     box-shadow: 0 20px 50px rgba(0,0,0,0.6);
-    transform: translateY(25px); /* keluar frame */
+    transform: translateY(28px); /* keluar frame */
     transition: 0.3s;
     cursor: pointer;
 }
@@ -536,21 +550,22 @@ body {
         <div class="logo">CV Online</div>
         <div class="menu-btn" onclick="toggleMenu()">menu</div>
         <div class="nav-links" id="navMenu">
-            <a href="#tentang">Tentang Saya</a>
-            <a href="#pendidikan">Pendidikan</a>
-            <a href="#keahlian">Keahlian</a>
-            <a href="#organisasi">Organisasi</a>
-            <a href="#galeri">Galeri</a>
-            <a href="#prestasi">Prestasi</a>
+            <a href="#home" class="nav-item">Home</a> 
+            <a href="#tentang" class="nav-item">Tentang Saya</a>
+            <a href="#pendidikan" class="nav-item">Pendidikan</a>
+            <a href="#keahlian" class="nav-item">Keahlian</a>
+            <a href="#organisasi" class="nav-item">Organisasi</a>
+            <a href="#galeri" class="nav-item">Galeri</a>
+            <a href="#prestasi" class="nav-item">Prestasi</a>
         </div>
     </div>
 </div>
 
 <!-- HERO -->
-<header class="hero">
+<header id="home" class="hero">
     <div class="hero-overlay">
         <div class="hero-content">
-            <img src="image/amn.png" class="profile-img" onclick="openImage(this.src)">
+            <img src="image/galeri/gunung1.jpg" class="profile-img" onclick="openImage(this.src)">
 
             <div class="hero-text">
                 <h1>Alman Maulana Nurdin</h1>
@@ -585,7 +600,7 @@ body {
 
 <section class="section split-section">
 
-    <div class="split-card">
+    <div id="pendidikan" class="split-card">
         <div class="section-title">
             <span class="icon">school</span>
             Pendidikan
@@ -602,7 +617,7 @@ body {
         </div>
     </div>
 
-    <div class="split-card">
+    <div  id="keahlian" class="split-card">
         <div class="section-title">
             <span class="icon">bolt</span>
             Keahlian
@@ -669,7 +684,7 @@ body {
     </div>
 </section>
 
-<div class="section">
+<div id="galeri" class="section">
   <div class="section-title">
     <span class="icon">photo_camera</span>
     Galeri Dokumentasi
@@ -686,7 +701,7 @@ body {
    
 
     <!-- FOTO TAMBAHAN (TERSEMBUNYI) -->
-    <img src="image/galeri/IMG_20260102_155124.jpg" class="medium hidden-photo" onclick="openImage(this.src)">
+    <img src="image/galeri/dyaz.jpg" class="medium hidden-photo" onclick="openImage(this.src)">
     <img src="image/galeri/aula.jpg" class="small hidden-photo" onclick="openImage(this.src)">
     <img src="image/galeri/lapang.jpg" class="small" onclick="openImage(this.src)">
     <img src="image/galeri/osis1.jpg" class="small hidden-photo" onclick="openImage(this.src)">
@@ -768,6 +783,44 @@ function openImage(src) {
 
 function closeImage() {
     lightbox.style.display = "none";
+}
+
+//navbar 
+// Fitur Active Link saat Scroll
+const sections = document.querySelectorAll("section, header");
+const navLinks = document.querySelectorAll(".nav-links a");
+
+window.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        // Deteksi jika posisi scroll berada di area section (dengan offset 70px untuk navbar)
+        if (pageYOffset >= sectionTop - 70) {
+            current = section.getAttribute("id");
+        }
+    });
+
+    navLinks.forEach((link) => {
+        link.classList.remove("active");
+        if (link.getAttribute("href").includes(current)) {
+            link.classList.add("active");
+        }
+    });
+});
+
+// Perbaikan fungsi toggleMenu agar tidak bug di desktop
+function toggleMenu() {
+    const menu = document.getElementById("navMenu");
+    menu.classList.toggle("show"); // Gunakan class toggle lebih aman
+    
+    // Jika manual pakai display:
+    if(menu.style.display === "flex") {
+        menu.style.display = "none";
+    } else {
+        menu.style.display = "flex";
+    }
 }
 
 // galeri
