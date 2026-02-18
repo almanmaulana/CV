@@ -22,22 +22,43 @@ const sections = document.querySelectorAll("section, header, div[id]");
 const navLinks = document.querySelectorAll(".nav-links a");
 
 window.addEventListener("scroll", () => {
+
     let current = "";
 
-    sections.forEach((section) => {
-        const sectionTop = section.offsetTop;
-        if (pageYOffset >= sectionTop - 80) {
-            current = section.getAttribute("id");
+    sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+
+        if (rect.top <= 120 && rect.bottom >= 120) {
+            current = section.id;
         }
     });
 
-    navLinks.forEach((link) => {
-        link.classList.remove("active");
-        if (link.getAttribute("href").includes(current)) {
-            link.classList.add("active");
-        }
-    });
+    navLinks.forEach(link => link.classList.remove("active"));
+
+    /* ================= LOGIKA KHUSUS ================= */
+
+    // Jika berada di area split section
+    const splitSection = document.querySelector(".split-section");
+    const splitRect = splitSection.getBoundingClientRect();
+
+    if (splitRect.top <= 120 && splitRect.bottom >= 120) {
+        document.querySelector('a[href="#pendidikan"]').classList.add("active");
+        document.querySelector('a[href="#keahlian"]').classList.add("active");
+        return; // hentikan supaya tidak bentrok
+    }
+
+    // Normal behaviour (selain split section)
+    if (current) {
+        const activeLink = document.querySelector(`a[href="#${current}"]`);
+        if (activeLink) activeLink.classList.add("active");
+    }
+
+    // Home di paling atas
+    if (window.scrollY < 100) {
+        document.querySelector('a[href="#home"]').classList.add("active");
+    }
 });
+
 
 // ================= TOGGLE GALERI =================
 let expanded = false;
