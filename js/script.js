@@ -103,3 +103,11 @@ function prevImage() {
 
     document.getElementById("popupImage").src = currentImages[currentIndex];
 }
+
+// Menutup menu otomatis saat link diklik (Mobile)
+document.querySelectorAll(".nav-item").forEach(link => {
+    link.addEventListener("click", () => {
+        const menu = document.getElementById("navMenu");
+        menu.classList.remove("show"); // Menghapus class show sehingga menu tertutup
+    });
+});

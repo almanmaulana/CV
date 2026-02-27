@@ -82,7 +82,7 @@ body {
     position: absolute;
     inset: 0;
     background: url('../image/galeri/k.jpg') center/cover;
-    opacity: 0.2;
+    opacity: 0.5;
 }
 
 .hero-overlay {
@@ -507,8 +507,26 @@ body {
         background: #111;
         flex-direction: column;
         display: none;
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.3s ease; 
+        display: flex !important; 
+        transform: translateY(-10px);
     }
 
+    .nav-links.show {
+        display: flex; 
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+
+    .nav-links a {
+        padding: 15px;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .menu-btn { display: block; }
     .nav-links a {
         padding: 15px;
         border-bottom: 1px solid var(--border-color);
@@ -577,4 +595,44 @@ body {
 .copyright {
     font-size: 12px;
     color: #555;
+}
+
+
+/* buat tampilan detail organisasi */
+.org-card {
+    position: relative;
+}
+
+/* Tombol detail */
+.detail-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0,0,0,0.6);
+    color: white;
+    font-size: 12px;
+
+    opacity: 0;
+    transform: translateY(-5px);
+    transition: 0.25s ease;
+}
+
+/* Muncul saat hover */
+.org-card:hover .detail-btn {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hover efek */
+.detail-btn:hover {
+    background: var(--accent);
 }

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Pengalaman OSIS - Alman Maulana</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Material+Symbols+Outlined" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/osis.css?v=1.1">
+</head>
+<body>
+
+    <a href="../index.html" class="back-btn">
+        <i class="fa-solid fa-arrow-left"></i>
+    </a>
+
+    <div class="detail-page">
+        <div class="detail-visual">
+            <div class="detail-photo">
+                 <img src="../image/amn.png" alt="Alman Maulana">
+                 <div class="photo-name">
+                    <div class="name">Alman Maulana</div>
+                    <div class="role">Wakil OSIS II</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="detail-content">
+            <h1>OSIS SMK AL-ITTIHAD</h1>
+            
+            <div class="badge-container">
+                <span class="badge">Wakil Ketua OSIS II</span>
+                <span class="badge-year">Periode 2024 - 2025</span>
+            </div>
+
+            <p>
+                OSIS (Organisasi Siswa Intra Sekolah) adalah organisasi resmi di tingkat sekolah yang berperan sebagai wadah bagi siswa untuk mengembangkan potensi, karakter, dan jiwa kepemimpinan melalui berbagai program kerja nyata.
+            </p>
+
+            <h3>Tugas & Tanggung Jawab</h3>
+            <ul class="task-list">
+                <li>Menggantikan tugas Ketua Umum atau Wakil Ketua I apabila sedang berhalangan hadir.</li>
+                <li>Mengoordinasi divisi/sekbid di bawah tanggung jawab langsung untuk mendukung program sekolah.</li>
+                <li>Menyusun rencana strategis dan memimpin jalannya program kerja tahunan organisasi.</li>
+                <li>Menjadi jembatan komunikasi yang efektif antara aspirasi siswa dengan kebijakan pihak sekolah.</li>
+            </ul>
+
+            <h3>Kemampuan yang Terasah</h3>
+            <div class="skill-tags">
+                <span>Leadership</span>
+                <span>Public Speaking</span>
+                <span>Strategic Planning</span>
+                <span>Problem Solving</span>
+                <span>Team Coordination</span>
+            </div>
+            
+            <div class="album-container" style="margin-top: 50px;">
+                <h3 style="margin-bottom: 20px;">Dokumentasi Kegiatan</h3>
+                <div class="album-grid">
+                    
+                    <div class="album-card" onclick="openGallery(['../image/osis/orasi.jpg', '../image/osis/orasi1.jpg'])">
+                        <div class="album-image">
+                            <img src="../image/osis/Banner.jpg" alt="Orasi">
+                            <div class="photo-count"><i class="fa-solid fa-images"></i> 2 Foto</div>
+                        </div>
+                        <h4>Orasi</h4>
+                    </div>
+
+                    <div class="album-card" onclick="openGallery(['../image/osis/bph.jpg'])">
+                        <div class="album-image">
+                            <img src="../image/osis/bph.jpg" alt="BPH">
+                            <div class="photo-count"><i class="fa-solid fa-images"></i> 1 Foto</div>
+                        </div>
+                        <h4>BPH</h4>
+                    </div>
+
+                    <div class="album-card" onclick="openGallery(['../image/osis/rabul1.jpg', '../image/osis/rabul2.jpg'])">
+                        <div class="album-image">
+                            <img src="../image/osis/rabul1.jpg" alt="rabul">
+                            <div class="photo-count"><i class="fa-solid fa-images"></i> 2 Foto</div>
+                        </div>
+                        <h4>Rapat Bulanan</h4>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+         <!-- POPUP GALERI -->
+    <div id="galleryPopup" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.9); align-items:center; justify-content:center; z-index:9999;">
+
+        <span onclick="closeGallery()" 
+            style="position:absolute; top:20px; right:30px; font-size:30px; color:white; cursor:pointer;">
+            &times;
+        </span>
+
+        <button onclick="prevImage()" 
+                style="position:absolute; left:30px; font-size:30px; background:none; border:none; color:white; cursor:pointer;">
+            &#10094;
+        </button>
+
+        <img id="popupImage" 
+            style="max-width:90%; max-height:80%; border-radius:10px;">
+
+        <button onclick="nextImage()" 
+                style="position:absolute; right:30px; font-size:30px; background:none; border:none; color:white; cursor:pointer;">
+            &#10095;
+        </button>
+
+    </div>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/organisasi.js"></script>
+
+</body>
+</html>
