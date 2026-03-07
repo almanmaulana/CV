@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV Online Alman Maulana </title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Material+Symbols+Outlined" rel="stylesheet">
+<!-- link font -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- link css -->
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="nav-container">
+        <div class="logo">CV Online</div>
+        <div class="menu-btn" onclick="toggleMenu()">menu</div>
+        <div class="nav-links" id="navMenu">
+            <a href="#home" class="nav-item">Home</a> 
+            <a href="#tentang" class="nav-item">Tentang Saya</a>
+            <a href="#pendidikan" class="nav-item">Pendidikan</a>
+            <a href="#keahlian" class="nav-item">Keahlian</a>
+            <a href="#organisasi" class="nav-item">Organisasi</a>
+            <a href="#galeri" class="nav-item">Galeri</a>
+            <a href="#prestasi" class="nav-item">Prestasi</a>
+            <a href="#kontak" class="nav-item">Kontak</a>
+        </div>
+    </div>
+</div>
+
+<!-- HERO -->
+<header id="home" class="hero">
+    <div class="hero-overlay">
+        <div class="hero-content">
+            <img src="image/galeri/gunung1.jpg" class="profile-img" onclick="openImage(this.src)">
+
+            <div class="hero-text">
+                <h1>Alman Maulana Nurdin</h1>
+                <div class="subtitle">Santri • Pelajar • Gamers</div>
+
+                <!-- <div class="hero-details">
+                    SMK Negeri 1 Kota<br>
+                    Teknik Komputer & Jaringan<br>
+                    Public Speaking • Desain • Troubleshooting
+                </div> -->
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- SECTIONS -->
+<section id="tentang" class="section about-section">
+    <div class="about-content">
+        <div class="section-title">
+            <span class="icon">person</span>
+            Tentang Saya
+        </div>
+
+        <p>
+            Saya adalah pribadi yang disiplin, bertanggung jawab, dan memiliki semangat belajar yang tinggi.
+            Saya memiliki minat besar dalam bidang teknologi, desain, dan pengembangan diri.
+            Saya senang mengeksplorasi hal baru, meningkatkan keterampilan, serta terus berkembang secara profesional.
+        </p>
+    </div>
+</section>
+
+
+<section class="section split-section">
+
+    <div id="pendidikan" class="split-card">
+        <div class="section-title">
+            <span class="icon">school</span>
+            Pendidikan
+        </div>
+
+        <div class="card-content">
+            <h3>SDN Tegalwaru</h3>
+            <span>2014 – 2020</span>
+            <h3>SMP AL-ITTIHAD</h3>
+            <span>2020 – 2023</span>
+            <h3>SMK AL-ITTIHAD</h3>
+            <p>Pengembangan Perangkat Lunak dan Gim</p>
+            <span>2023 – Sekarang</span>
+        </div>
+    </div>
+
+    <div  id="keahlian" class="split-card">
+        <div class="section-title">
+            <span class="icon">bolt</span>
+            Keahlian
+        </div>
+
+        <div class="card-content">
+            <ul>
+                <li>Public Speaking</li>
+                <li>KItab Kuning</li>
+                <li>Problem solving</li>
+                <li>Manajemen Proyek Kecil</li>
+            </ul>
+        </div>
+    </div>
+
+</section>
+
+<section id="organisasi" class="org-section">
+  <div class="org-container">
+    <div class="section-title">
+        <span class="icon">groups</span>
+        Pengalaman 
+    </div>
+
+    <div class="org-grid">
+
+        <!-- card kamu tetap sama -->
+        <div class="org-card">
+            <img src="image/logo/OSIS IP3A.PNG">
+
+            <h3>OSIS</h3>
+            <p>Aktif dalam kegiatan kepengurusan di sekolah.</p>
+
+            <!-- IKON DETAIL -->
+            <a href="organisasi/osis.html" class="detail-btn">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+        </div>
+
+
+        <div class="org-card">
+            <img src="image/logo/IPNU-removebg-preview.png">
+            <h3>IPNU</h3>
+            <p>Berpartisipasi dalam badan otonom nahdlatul ulama</p>
+        </div>
+
+        <div class="org-card">
+            <img src="image/logo/PPLG 2.png">
+            <h3>PPLG</h3>
+            <p>Terlibat dalam perencanaan dan manajemen acara sekolah.</p>
+        </div>
+
+        <div class="org-card">
+            <img src="image/logo/logo_kts__baru-removebg-preview.png">
+            <h3>Kutubussalafiyyah</h3>
+            <p>Mempelajari dan memperdalam kitab kuning.</p>
+        </div>
+
+        <div class="org-card">
+            <img src="image/logo/logo_lbm_baru-removebg-preview.png">
+            <h3>Lajnah Bahtsul Masail</h3>
+            <p>Bermusyawarah mengenai sebuah permasalahan.</p>
+        </div>
+
+        <div class="org-card">
+            <img src="image/logo/LPDA-removebg-preview.png">
+            <h3>LPDA</h3>
+            <p>Berpartisipasi dalam kegiatan penyebaran islam.</p>
+        </div>
+        </div>
+    </div>
+</section>
+
+<div id="galeri" class="section">
+  <div class="section-title">
+    <span class="icon">photo_camera</span>
+    Galeri Dokumentasi
+  </div>
+
+  <div class="gallery-grid" id="gallery">
+
+    <!-- 5 FOTO AWAL -->
+    <img src="image/galeri/imbar.jpg" class="tall left" onclick="openImage(this.src)">
+    <img src="image/galeri/KTS.jpg" class="small" onclick="openImage(this.src)">
+    <img src="image/galeri/nyantai.jpg" class="medium right" onclick="openImage(this.src)">
+    <img src="image/galeri/gunung.jpg" class="tall hidden-photo" onclick="openImage(this.src)">
+    <img src="image/galeri/pplg.jpg" class="medium" onclick="openImage(this.src)">
+   
+
+    <!-- FOTO TAMBAHAN (TERSEMBUNYI) -->
+    <img src="image/galeri/dyaz.jpg" class="medium hidden-photo" onclick="openImage(this.src)">
+    <img src="image/galeri/aula.jpg" class="small hidden-photo" onclick="openImage(this.src)">
+    <img src="image/galeri/lapang.jpg" class="small" onclick="openImage(this.src)">
+    <img src="image/galeri/osis1.jpg" class="small hidden-photo" onclick="openImage(this.src)">
+    <img src="image/galeri/sidang.jpg" class="medium hidden-photo" onclick="openImage(this.src)">
+  </div>
+
+  <button class="load-more" id="toggleBtn" onclick="toggleGallery()">
+  Lihat Lebih Banyak
+</button>
+
+</div>
+
+
+<section id="prestasi" class="section">
+    <div class="section-title">
+        <span class="icon">emoji_events</span>
+        Prestasi
+    </div>
+
+    <div class="achievement-list">
+
+        <div class="achievement-item"
+             onclick="openGallery([
+               'image/sertifikat/sertifikat juara 1 pidato bahasa Arab tingkat kabupaten.jpg',
+            //    'image/prestasi/pidato2.jpg',
+            //    'image/prestasi/pidato3.jpg'
+             ])">
+
+            <div class="achievement-dot"></div>
+            Lomba Pidato Bahasa Arab
+        </div>
+
+        <div class="achievement-item"
+             onclick="openGallery([
+               'image/sertifikat/sertifikat beasiswa kelas 10 semester 2 .jpg',
+               'image/sertifikat/sertifikat beasiswa kelas 11 semester 1.jpg',
+               'image/sertifikat/beasiswa kelas 11 semester 2.jpg'
+             ])">
+
+            <div class="achievement-dot"></div>
+            Beasiswa
+        </div>
+
+    </div>
+</section>
+
+
+<!-- sertifikat -->
+<div class="gallery-popup" id="galleryPopup">
+  <span class="close-btn" onclick="closeGallery()">close</span>
+
+  <img id="popupImage">
+
+  <div class="popup-controls">
+    <span onclick="prevImage()">chevron_left</span>
+    <span onclick="nextImage()">chevron_right</span>
+  </div>
+</div>
+
+<footer class="footer" id="kontak">
+    <div class="footer-container">
+        <div class="contact-row">
+
+            <a href="mailto:almanmaulana001@gmail.com" class="contact-item">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+
+            <a href="https://wa.me/6281210190538" target="_blank" class="contact-item">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+
+            <a href="https://www.instagram.com/alman.mn.o1/" target="_blank" class="contact-item">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="https://www.google.com/maps/place/Rumah+alman+maulana+nurdin/@-6.6465424,107.3391849,17z/data=!3m1!4b1!4m6!3m5!1s0x2e69070018cdb821:0xae0993c2948527c9!8m2!3d-6.6465477!4d107.3417598!16s%2Fg%2F11w4g2wtcx?entry=ttu" target="_blank" class="contact-item">
+                <i class="fa-solid fa-location-dot"></i>
+            </a>
+
+            <span class="copyright">
+                | &copy; 2026 Alman Maulana
+            </span>
+
+        </div>
+    </div>
+</footer>
+
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeImage()">
+    <img id="lightbox-img">
+</div>
+
+<script src="./js/script.js"></script>
+
+
+</body>
+</html>
